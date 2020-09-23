@@ -5,8 +5,9 @@ import Hidden from "@material-ui/core/Hidden"
 import { makeStyles, useTheme } from "@material-ui/core/styles"
 import Grid from "@material-ui/core/Grid"
 import Divider from "@material-ui/core/Divider"
+import Link from "@material-ui/core/Link"
 
-import Background from "../../static/about.jpg"
+import Background from "../../static/me.jpg"
 import WhiteTypography from "./WhiteTypography"
 
 import Social from "./Social"
@@ -18,14 +19,12 @@ const useStyles = makeStyles(theme => ({
   },
 
   drawerPaper: {
-    [theme.breakpoints.up("sm")]: {
-      width: props => props.drawerWidth * 0.7,
-    },
+
     [theme.breakpoints.up("md")]: {
-      width: props => props.drawerWidth * 1,
+      width: props => props.drawerWidth,
     },
     backgroundImage: `url(${Background})`,
-    backgroundPosition: "center",
+    backgroundPosition: "-180px center",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
   },
@@ -34,6 +33,7 @@ const useStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(8),
     display: "flex",
     flex: 1,
+    width: "100%",
   },
   item: {
     width: "100%",
@@ -60,8 +60,10 @@ function Sidebar(props) {
       spacing={10}
     >
       <Grid item className={classes.item}>
-        <WhiteTypography variant="h4">Zoltan Simon</WhiteTypography>
-        <WhiteTypography variant="h6">Things</WhiteTypography>
+        <Link underline="none" href="/">
+          <WhiteTypography variant="h4">Zoltan Simon</WhiteTypography>
+          <WhiteTypography variant="h6">Things</WhiteTypography>
+        </Link>
       </Grid>
       <Grid item className={classes.item}>
         <Divider className={classes.divider} />
@@ -91,7 +93,7 @@ function Sidebar(props) {
           {drawer}
         </Drawer>
       </Hidden>
-      <Hidden xsDown implementation="css">
+      <Hidden smDown implementation="css">
         <Drawer
           classes={{
             paper: classes.drawerPaper,

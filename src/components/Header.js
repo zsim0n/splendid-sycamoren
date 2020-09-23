@@ -6,13 +6,15 @@ import MenuIcon from "@material-ui/icons/Menu"
 import IconButton from "@material-ui/core/IconButton"
 import Container from "@material-ui/core/Container"
 import Typography from "@material-ui/core/Typography"
+import Link from "@material-ui/core/Link"
+
 import Toolbar from "./Toolbar"
 import WhiteTypography from "./WhiteTypography"
 
 const useStyles = makeStyles(theme => ({
   menuButton: {
     marginRight: theme.spacing(2),
-    [theme.breakpoints.up("sm")]: {
+    [theme.breakpoints.up("md")]: {
       display: "none",
     },
   },
@@ -26,11 +28,7 @@ const useStyles = makeStyles(theme => ({
   },
 
   appbar: props => ({
-    [theme.breakpoints.up("sm")]: {
-      width: `calc(100% - ${props.drawerWidth}px) * 0.7`,
-      marginLeft: props.drawerWidth,
-      display: "none",
-    },
+
     [theme.breakpoints.up("md")]: {
       width: `calc(100% - ${props.drawerWidth}px) `,
       marginLeft: props.drawerWidth,
@@ -40,7 +38,7 @@ const useStyles = makeStyles(theme => ({
 
   title: {
     marginRight: theme.spacing(2),
-    [theme.breakpoints.up("sm")]: {
+    [theme.breakpoints.up("md")]: {
       display: "none",
     },
   },
@@ -63,23 +61,25 @@ export default function Header(props) {
             <MenuIcon />
           </IconButton>
           <div className={classes.title}>
-            <WhiteTypography
-              variant="h6"
-              display="inline"
-              style={{ marginRight: "10px" }}
-            >
-              Zoltan Simon
-            </WhiteTypography>
-            <WhiteTypography
-              variant="h6"
-              display="inline"
-              style={{ marginRight: "10px" }}
-            >
-              -
-            </WhiteTypography>
-            <Typography variant="h6" color="secondary" display="inline">
-              Things
-            </Typography>
+            <Link underline="none" href="/">
+              <WhiteTypography
+                variant="h6"
+                display="inline"
+                style={{ marginRight: "10px" }}
+              >
+                Zoltan Simon
+              </WhiteTypography>
+              <WhiteTypography
+                variant="h6"
+                display="inline"
+                style={{ marginRight: "10px" }}
+              >
+                -
+              </WhiteTypography>
+              <Typography variant="h6" color="secondary" display="inline">
+                Things
+              </Typography>
+            </Link>
           </div>
         </Toolbar>
       </AppBar>
