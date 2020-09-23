@@ -47,8 +47,8 @@ const MDXcomponents = {
       borderBottom: "2px solid #ff3366",
       paddingBottom: "1px",
     }))
-    const LINK = React.forwardRef(({ children, ...props }, ref) => (
-      <StyledLink underline="none" {...props} ref={ref}>
+    const LINK = React.forwardRef(({ children, ...props }, reference) => (
+      <StyledLink underline="none" {...props} ref={reference}>
         {children}{" "}
       </StyledLink>
     ))

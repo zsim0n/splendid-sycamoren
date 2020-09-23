@@ -13,8 +13,6 @@ import CardContent from "@material-ui/core/CardContent"
 import CardActions from "@material-ui/core/CardActions"
 import PropTypes from "prop-types"
 
-
-
 const useStyles = makeStyles(theme => ({
   card: {
     border: "none",
@@ -48,6 +46,14 @@ const BlogHeader = ({ classes, data, preview }) => (
     )}
   </>
 )
+BlogHeader.defaultProps = {
+  preview: false,
+}
+BlogHeader.propTypes = {
+  classes: PropTypes.objectOf(PropTypes.any).isRequired,
+  data: PropTypes.objectOf(PropTypes.any).isRequired,
+  preview: PropTypes.bool,
+}
 
 export default function BlogPost(props) {
   const classes = useStyles(props)

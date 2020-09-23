@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
 const ScrollToTop = ({ showBelow }) => {
   const classes = useStyles()
 
-  const [show, setShow] = useState(showBelow ? false : true)
+  const [show, setShow] = useState(!showBelow)
 
   const handleScroll = () => {
     if (window.pageYOffset > showBelow) {
@@ -23,19 +23,9 @@ const ScrollToTop = ({ showBelow }) => {
     } else if (show) setShow(false)
   }
 
-  const handleClick = () => {
-    window.scrollTo({ top: 0, behavior: `smooth` })
-  }
-  /*
-const handleClick = () => {
-        window[`scrollTo`]({ top: document.body.scrollHeight, behavior: `smooth` })
-    }
-*/
   useEffect(() => {
-    if (showBelow) {
-      window.addEventListener(`scroll`, handleScroll)
-      return () => window.removeEventListener(`scroll`, handleScroll)
-    }
+    window.addEventListener(`scroll`, handleScroll)
+    return () => window.removeEventListener(`scroll`, handleScroll)
   })
 
   return (
@@ -44,7 +34,10 @@ const handleClick = () => {
         <Fab
           color="primary"
           aria-label="to top"
-          onClick={handleClick}
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: `smooth` })
+            /* window[`scrollTo`]({ top: document.body.scrollHeight, behavior: `smooth` }) */
+          }}
           className={classes.fab}
         >
           <NavigationIcon />

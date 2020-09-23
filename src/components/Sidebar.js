@@ -8,6 +8,7 @@ import Divider from "@material-ui/core/Divider"
 import Link from "@material-ui/core/Link"
 
 import Background from "../../static/me.jpg"
+
 import WhiteTypography from "./WhiteTypography"
 
 import Social from "./Social"
@@ -19,7 +20,6 @@ const useStyles = makeStyles(theme => ({
   },
 
   drawerPaper: {
-
     [theme.breakpoints.up("md")]: {
       width: props => props.drawerWidth,
     },
