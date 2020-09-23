@@ -3,7 +3,7 @@ import Typography from "@material-ui/core/Typography"
 
 const WhiteTypography = withStyles(theme => ({
   root: {
-    color: theme.palette.common.white,
+    color: "white",
   },
 }))(Typography)
 

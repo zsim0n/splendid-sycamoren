@@ -29,21 +29,26 @@ module.exports = {
     author: `@zsim0n`,
   },
   plugins: [
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-remark-images-contentful`,
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        fonts: [
-          `Work Sans\:300,400,700`,
-          `Roboto Mono`,
-          `Roboto`,
-          `Roboto Condensed\:700`,
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images-contentful`,
+            options: {
+              maxWidth: 1035,
+              sizeByPixelDensity: false,
+              linkImagesToOriginal: false,
+            },
+          },
         ],
-        display: "swap",
+        plugins: [`gatsby-remark-images-contentful`],
       },
     },
     `gatsby-plugin-react-helmet`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -68,6 +73,18 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Work Sans\:300,400,700`,
+          `Roboto Mono`,
+          `Roboto`,
+          `Roboto Condensed\:700`,
+        ],
+        display: "swap",
+      },
+    },
+    {
       resolve: `gatsby-plugin-material-ui`,
       // If you want to use styled components, in conjunction to Material-UI, you should:
       // - Change the injection order
@@ -80,22 +97,6 @@ module.exports = {
     },
     // 'gatsby-plugin-styled-components',
 
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    `gatsby-plugin-offline`,
-    {
-      resolve: "gatsby-plugin-eslint",
-      options: {
-        test: /\.js$|\.jsx$/,
-        exclude: /(node_modules|.cache|public)/,
-        stages: ["develop"],
-        options: {
-          emitWarning: true,
-          failOnError: false,
-        },
-      },
-    },
-    "gatsby-transformer-remark",
     {
       resolve: "gatsby-source-contentful",
       options: contentfulConfig,

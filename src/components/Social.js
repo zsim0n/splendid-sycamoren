@@ -2,7 +2,6 @@ import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 
 import Link from "@material-ui/core/Link"
-import FaceBookIcon from "@material-ui/icons/Facebook"
 import TwitterIcon from "@material-ui/icons/Twitter"
 import GithubIcon from "@material-ui/icons/GitHub"
 import LinkedinIcon from "@material-ui/icons/LinkedIn"
@@ -45,16 +44,16 @@ export default function Social(props) {
         <Link
           className={classes.icon}
           color="inherit"
-          href="https://facebook.com/"
+          href="https://github.com/zsim0n"
         >
-          <FaceBookIcon />
+          <GithubIcon />
         </Link>
       </Grid>
       <Grid item>
         <Link
           className={classes.icon}
           color="inherit"
-          href="https://twitter.com/"
+          href="https://twitter.com/zsim0n"
         >
           <TwitterIcon />
         </Link>
@@ -63,7 +62,7 @@ export default function Social(props) {
         <Link
           className={classes.icon}
           color="inherit"
-          href="https://linkedin.com/"
+          href="https://www.linkedin.com/in/zoltansimon27"
         >
           <LinkedinIcon />
         </Link>
