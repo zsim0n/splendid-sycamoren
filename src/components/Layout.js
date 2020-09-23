@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { makeStyles } from "@material-ui/core/styles"
 import withRoot from "../withRoot"
 import SEO from "./Seo"
@@ -46,4 +47,7 @@ const Layout = ({ children }) => {
   )
 }
 
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+}
 export default withRoot(Layout)

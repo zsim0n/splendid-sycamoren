@@ -3,7 +3,6 @@ import Typography from "@material-ui/core/Typography"
 import withRoot from "../withRoot"
 import SEO from "../components/Seo"
 
-
 const NotFound = () => (
   <>
     <SEO title="404: Not found" />

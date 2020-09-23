@@ -1,10 +1,8 @@
-import { withStyles } from "@material-ui/core/styles"
+import { styled } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
 
-const WhiteTypography = withStyles(theme => ({
-  root: {
-    color: "white",
-  },
-}))(Typography)
+const StyledTypography = styled(Typography, { withTheme: true })(() => ({
+  color: "white",
+}))
 
-export default WhiteTypography
+export default StyledTypography
