@@ -33,14 +33,14 @@ const BlogHeader = ({ classes, data, preview }) => (
     <CardHeader
       component="header"
       titleTypographyProps={{ variant: "h4" }}
-      title={data.title.title}
+      title={data.title?.title}
       subheaderTypographyProps={{ variant: "overline" }}
       subheader={data.date}
     />
-    {preview && (
+    {preview && data.thumb_img_path && (
       <CardMedia
         className={classes.media}
-        image={data.thumb_img_path.fluid.src}
+        image={data.thumb_img_path?.fluid.src}
         title="Paella dish"
       />
     )}
@@ -61,7 +61,7 @@ export default function BlogPost(props) {
   return (
     <Card className={classes.card} variant="outlined" component="article">
       {preview && (
-        <CardActionArea href={data.stackbit_url_path.stackbit_url_path}>
+        <CardActionArea href={data.stackbit_url_path?.stackbit_url_path}>
           <BlogHeader data={data} classes={classes} preview={preview} />
         </CardActionArea>
       )}
@@ -70,13 +70,13 @@ export default function BlogPost(props) {
       )}
       <CardContent>
         <Typography variant="body1" color="textSecondary" component="p">
-          {data.excerpt ? data.excerpt.excerpt : ""}
+          {data.excerpt?.excerpt}
         </Typography>
       </CardContent>
       {preview && (
         <CardActions disableSpacing>
           <Button
-            href={data.stackbit_url_path.stackbit_url_path}
+            href={data.stackbit_url_path?.stackbit_url_path}
             color="primary"
             className={classes.button}
             endIcon={<ArrowRightAlt color="secondary" />}
@@ -87,7 +87,7 @@ export default function BlogPost(props) {
       )}
       {!preview && (
         <CardContent>
-          <MDXRenderer>{data.content.childMdx.body}</MDXRenderer>
+          <MDXRenderer>{data.content?.childMdx.body}</MDXRenderer>
         </CardContent>
       )}
     </Card>

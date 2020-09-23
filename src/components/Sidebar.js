@@ -24,13 +24,12 @@ const useStyles = makeStyles(theme => ({
       width: props => props.drawerWidth,
     },
     backgroundImage: `url(${Background})`,
-    backgroundPosition: "-180px center",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
   },
   container: {
     marginTop: "auto",
-    marginBottom: theme.spacing(8),
+    marginBottom: theme.spacing(1),
     display: "flex",
     flex: 1,
     width: "100%",
@@ -41,7 +40,7 @@ const useStyles = makeStyles(theme => ({
   },
   divider: {
     backgroundColor: theme.palette.secondary.main,
-    height: "5px",
+    height: "2px",
   },
 }))
 
@@ -57,7 +56,7 @@ function Sidebar(props) {
       className={classes.container}
       direction="column"
       justify="flex-end"
-      spacing={10}
+      spacing={5}
     >
       <Grid item className={classes.item}>
         <Link underline="none" href="/">

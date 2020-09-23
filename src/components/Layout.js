@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen)
   }
-  const drawerWidth = 400
+  const drawerWidth = 300
 
   const childrenWithProps = React.Children.map(children, child => {
     return React.cloneElement(child, {
