@@ -55,7 +55,7 @@ BlogHeader.propTypes = {
   preview: PropTypes.bool,
 }
 
-export default function BlogPost(props) {
+export default function PostCard(props) {
   const classes = useStyles(props)
   const { data, preview } = props
   return (
@@ -94,11 +94,11 @@ export default function BlogPost(props) {
   )
 }
 
-BlogPost.defaultProps = {
+PostCard.defaultProps = {
   preview: false,
 }
 
-BlogPost.propTypes = {
+PostCard.propTypes = {
   data: PropTypes.objectOf(PropTypes.any).isRequired,
   preview: PropTypes.bool,
 }

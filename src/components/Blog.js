@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles"
 import Grid from "@material-ui/core/Grid"
 import { useStaticQuery, graphql } from "gatsby"
 
-import BlogPost from "./BlogPost"
+import PostCard from "./PostCard"
 import ScrollToTop from "./ScrollToTop"
 
 const useStyles = makeStyles(theme => ({
@@ -66,7 +66,7 @@ export default function Blog(props) {
         {data.allContentfulPost.edges.map(({ node }) => {
           return (
             <Grid item className={classes.item} key={node.contentful_id}>
-              <BlogPost data={node} preview />
+              <PostCard data={node} preview />
             </Grid>
           )
         })}

@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/core/styles"
 
 import Grid from "@material-ui/core/Grid"
 
-import BlogPost from "./BlogPost"
+import PostCard from "./PostCard"
 import ScrollToTop from "./ScrollToTop"
 
 const useStyles = makeStyles(theme => ({
@@ -33,7 +33,7 @@ const PostView = props => {
     <main className={classes.root}>
       <Grid container direction="row" spacing={5}>
         <Grid item className={classes.item}>
-          <BlogPost data={data.contentfulPost} />
+          <PostCard data={data.contentfulPost} />
         </Grid>
       </Grid>
       <ScrollToTop />

@@ -6,13 +6,10 @@ import SEO from "./Seo"
 import Header from "./Header"
 import Footer from "./Footer"
 import Sidebar from "./Sidebar"
-import { styles as toolbarStyles } from "./Toolbar"
 
 const useStyles = makeStyles(theme => ({
-  toolbar: {
-    [theme.breakpoints.down("xs")]: {
-      ...toolbarStyles(theme).root,
-    },
+  [theme.breakpoints.down("sm")]: {
+    toolbar: theme.mixins.toolbar,
   },
 }))
 const Layout = ({ children }) => {

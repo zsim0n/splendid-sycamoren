@@ -8,7 +8,7 @@ import Container from "@material-ui/core/Container"
 import Typography from "@material-ui/core/Typography"
 import Link from "@material-ui/core/Link"
 
-import Toolbar from "./Toolbar"
+import Toolbar from "@material-ui/core/Toolbar"
 import WhiteTypography from "./WhiteTypography"
 
 const useStyles = makeStyles(theme => ({
@@ -21,10 +21,6 @@ const useStyles = makeStyles(theme => ({
   // necessary for content to be below app bar
   root: {
     color: theme.palette.common.white,
-  },
-  toolbar: {
-    ...theme.mixins.toolbar,
-    justifyContent: "space-between",
   },
 
   appbar: props => ({
