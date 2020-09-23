@@ -25,8 +25,14 @@ if (!spaceId || !accessToken) {
 module.exports = {
   siteMetadata: {
     title: `zoltansimon.me blog - contact - portfolio`,
-    description: `My  Gatsby project with this Material UI with Contentful`,
+    description: `Thing`,
+    siteUrl: `https://zoltansimon.me/`,
     author: `@zsim0n`,
+    social: {
+      twitter: `zsim0n`,
+      github: `zsim0n`,
+      linkedin: `zoltansimon27`,
+    },
   },
   plugins: [
     `gatsby-plugin-sharp`,
