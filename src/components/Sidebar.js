@@ -20,11 +20,13 @@ const useStyles = makeStyles(theme => ({
   },
 
   drawerPaper: {
+
     [theme.breakpoints.up("md")]: {
       width: props => props.drawerWidth,
     },
     backgroundImage: `url(${Background})`,
-    backgroundSize: "cover",
+    backgroundSize: "auto 100%",
+    backgroundPosition: "25% center",
     backgroundRepeat: "no-repeat",
   },
   container: {
