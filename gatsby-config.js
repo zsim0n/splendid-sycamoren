@@ -79,17 +79,27 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-webfonts`,
       options: {
-        fonts: [
-          `Work Sans\:300,400,700`,
-          `Roboto Mono`,
-          `Roboto`,
-          `Roboto Condensed\:700`,
-        ],
-        display: "swap",
+        fonts: {
+          google: [
+            {
+              family: "Roboto",
+              variants: ["300", "400", "500"],
+              // subsets: ['latin']
+              // text: 'Hello'
+              // fontDisplay: 'swap',
+              // strategy: 'selfHosted' // 'base64' || 'cdn'
+            },
+          ],
+        },
+        // formats: ['woff2', 'woff'],
+        // useMinify: true,
+        // usePreload: true,
+        // usePreconnect: false,
       },
     },
+
     {
       resolve: `gatsby-plugin-material-ui`,
       // If you want to use styled components, in conjunction to Material-UI, you should:
