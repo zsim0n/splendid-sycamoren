@@ -42,6 +42,7 @@ export default function Social(props) {
     >
       <Grid item>
         <Link
+          onClick={event => event.stopPropagation()}
           className={classes.icon}
           color="inherit"
           href="https://github.com/zsim0n"
@@ -51,6 +52,7 @@ export default function Social(props) {
       </Grid>
       <Grid item>
         <Link
+          onClick={event => event.stopPropagation()}
           className={classes.icon}
           color="inherit"
           href="https://twitter.com/zsim0n"
@@ -60,6 +62,7 @@ export default function Social(props) {
       </Grid>
       <Grid item>
         <Link
+          onClick={event => event.stopPropagation()}
           className={classes.icon}
           color="inherit"
           href="https://www.linkedin.com/in/zoltansimon27"

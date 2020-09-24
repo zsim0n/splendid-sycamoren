@@ -59,7 +59,11 @@ function Sidebar(props) {
       spacing={5}
     >
       <Grid item className={classes.item}>
-        <Link underline="none" href="/">
+        <Link
+          underline="none"
+          href="/"
+          onClick={event => event.stopPropagation()}
+        >
           <WhiteTypography variant="h4">Zoltan Simon</WhiteTypography>
           <WhiteTypography variant="h6">Things</WhiteTypography>
         </Link>
@@ -81,6 +85,7 @@ function Sidebar(props) {
           variant="temporary"
           anchor={theme.direction === "rtl" ? "right" : "left"}
           open={mobileOpen}
+          onClick={handleDrawerToggle}
           onClose={handleDrawerToggle}
           classes={{
             paper: classes.drawerPaper,
