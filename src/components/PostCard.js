@@ -32,7 +32,7 @@ const BlogHeader = ({ classes, data, preview }) => (
     {" "}
     <CardHeader
       component="header"
-      titleTypographyProps={{ variant: "h4" }}
+      titleTypographyProps={{ variant: "h2" }}
       title={data.title?.title}
       subheaderTypographyProps={{ variant: "overline" }}
       subheader={data.date}

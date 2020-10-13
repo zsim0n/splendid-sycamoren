@@ -47,9 +47,6 @@ export default function Blog(props) {
                 src
               }
             }
-            subtitle {
-              subtitle
-            }
             content {
               childMdx {
                 body
