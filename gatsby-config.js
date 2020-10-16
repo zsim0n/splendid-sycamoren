@@ -127,9 +127,9 @@ module.exports = {
                 return {
                   title: node.node.title.title,
                   date: node.node.date,
-                  description: node.node.excerpt.excerpt,
-                  url: node.node.stackbit_url_path.stackbit_url_path,
-                  guid: node.node.stackbit_url_path.stackbit_url_path,
+                  description: node.node.excerpt?.excerpt,
+                  url: node.node.stackbit_url_path?.stackbit_url_path,
+                  guid: node.node.stackbit_url_path?.stackbit_url_path,
                 }
               })
             },
