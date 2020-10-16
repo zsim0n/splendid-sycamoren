@@ -68,7 +68,14 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <link
+        rel="alternate"
+        type="application/rss+xml"
+        title="RSS Feed for zoltansimon.me"
+        href="/rss.xml"
+      />
+    </Helmet>
   )
 }
 

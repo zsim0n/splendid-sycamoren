@@ -106,5 +106,59 @@ module.exports = {
       resolve: "gatsby-source-contentful",
       options: contentfulConfig,
     },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allContentfulPost } }) => {
+              return allContentfulPost.edges.map(node => {
+                return {
+                  title: node.node.title?.title,
+                  date: node.node.date,
+                  description: node.node.excerpt?.excerpt,
+                  url: node.node.stackbit_url_path?.stackbit_url_path,
+                  guid: node.node.stackbit_url_path?.stackbit_url_path,
+                }
+              })
+            },
+            query: `{
+              allContentfulPost(sort: { fields: date, order: DESC }) {
+                edges {
+                  node {
+                    contentful_id
+                    date
+                    excerpt {
+                      excerpt
+                    }
+                    title {
+                      title
+                    }
+                    stackbit_url_path {
+                      stackbit_url_path
+                    }
+                  }
+                }
+              }
+              }
+            `,
+            output: "/rss.xml",
+            title: "zoltansimon.me - RSS Feed",
+            match: "^/blog/",
+          },
+        ],
+      },
+    },
   ],
 }

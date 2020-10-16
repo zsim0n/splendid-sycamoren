@@ -36,6 +36,7 @@ exports.createPages = ({ graphql, actions }) => {
             path: `${post.node.stackbit_url_path.stackbit_url_path}/`,
             component: Post,
             context: {
+              title: post.node.title.title,
               contentful_id: post.node.contentful_id,
             },
           })

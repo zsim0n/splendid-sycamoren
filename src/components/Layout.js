@@ -12,7 +12,7 @@ const useStyles = makeStyles(theme => ({
     toolbar: theme.mixins.toolbar,
   },
 }))
-const Layout = ({ children }) => {
+const Layout = ({ title, children }) => {
   const [mobileOpen, setMobileOpen] = React.useState(false)
   const classes = useStyles()
   const handleDrawerToggle = () => {
@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
   })
   return (
     <>
-      <SEO title="Home" />
+      <SEO title={title} />
       <Header
         handleDrawerToggle={handleDrawerToggle}
         drawerWidth={drawerWidth}
@@ -43,8 +43,11 @@ const Layout = ({ children }) => {
     </>
   )
 }
-
+Layout.defaultProps = {
+  title: "Home",
+}
 Layout.propTypes = {
+  title: PropTypes.string,
   children: PropTypes.node.isRequired,
 }
 export default withRoot(Layout)

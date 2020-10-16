@@ -4,8 +4,9 @@ import Layout from "../components/Layout"
 import PostView from "../components/PostView"
 
 const Post = props => {
+  const { data } = props
   return (
-    <Layout>
+    <Layout title={data.contentfulPost.title?.title}>
       <PostView {...props} />
     </Layout>
   )

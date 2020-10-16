@@ -1,5 +1,6 @@
 # Welcome to splendid-sycamoren
-> Source for zoltansimon.me 
+
+> Source for zoltansimon.me
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/400ecd37-3c4a-4c62-9c61-83676320cf39/deploy-status)](https://app.netlify.com/sites/splendid-sycamoren-40f05c/deploys)
 
