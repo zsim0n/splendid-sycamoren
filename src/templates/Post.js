@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import PostView from "../components/PostView"
@@ -10,6 +11,10 @@ const Post = props => {
       <PostView {...props} />
     </Layout>
   )
+}
+
+Post.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
 export const pageQuery = graphql`

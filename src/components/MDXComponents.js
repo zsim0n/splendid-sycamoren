@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { memo } from "react"
 import Checkbox from "@material-ui/core/Checkbox"
 import Divider from "@material-ui/core/Divider"
@@ -47,11 +48,16 @@ const MDXcomponents = {
       borderBottom: "2px solid #ff3366",
       paddingBottom: "1px",
     }))
-    const LINK = React.forwardRef(({ children, ...props }, reference) => (
-      <StyledLink underline="none" {...props} ref={reference}>
-        {children}{" "}
-      </StyledLink>
-    ))
+    const LINK = React.forwardRef(function _StyledLink(
+      { children, ...props },
+      reference
+    ) {
+      return (
+        <StyledLink underline="none" {...props} ref={reference}>
+          {children}{" "}
+        </StyledLink>
+      )
+    })
     return memo(LINK)
   })(),
   blockquote: (() => {

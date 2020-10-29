@@ -20,7 +20,6 @@ const useStyles = makeStyles(theme => ({
   },
 
   drawerPaper: {
-
     [theme.breakpoints.up("md")]: {
       width: props => props.drawerWidth,
     },
