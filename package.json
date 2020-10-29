@@ -26,6 +26,7 @@
     "dotenv": "^8.2.0",
     "gatsby": "^2.24.91",
     "gatsby-plugin-feed": "^2.5.20",
+    "gatsby-plugin-gdpr-cookies": "^1.0.10",
     "gatsby-plugin-manifest": "^2.4.37",
     "gatsby-plugin-material-ui": "^2.1.10",
     "gatsby-plugin-mdx": "^1.2.52",
@@ -42,7 +43,8 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "react-live": "^2.2.2"
+    "react-live": "^2.2.2",
+    "react-use": "^15.3.4"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",

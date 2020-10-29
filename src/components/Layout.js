@@ -6,7 +6,19 @@ import SEO from "./Seo"
 import Header from "./Header"
 import Footer from "./Footer"
 import Sidebar from "./Sidebar"
+import Consent from "./Consent"
 
+const ConsentMessage = () => (
+  <>
+    This site uses cookies for analytics{" "}
+    <a
+      style={{ color: "white" }}
+      href="https://policies.google.com/technologies/cookies?hl=en-US"
+    >
+      more info
+    </a>
+  </>
+)
 const useStyles = makeStyles(theme => ({
   [theme.breakpoints.down("sm")]: {
     toolbar: theme.mixins.toolbar,
@@ -41,6 +53,7 @@ const Layout = ({ title, children }) => {
       <div className={classes.toolbar} />
       {childrenWithProps}
       <Footer />
+      <Consent message={<ConsentMessage />} />
     </>
   )
 }
