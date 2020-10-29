@@ -1,4 +1,4 @@
-require("dotenv").config({
+require(`dotenv`).config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
@@ -18,7 +18,7 @@ const { spaceId, accessToken } = contentfulConfig
 
 if (!spaceId || !accessToken) {
   throw new Error(
-    "Contentful spaceId and the access token need to be provided."
+    `Contentful spaceId and the access token need to be provided.`
   )
 }
 
@@ -55,6 +55,8 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-robots-txt`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -73,8 +75,8 @@ module.exports = {
         fonts: {
           google: [
             {
-              family: "Roboto",
-              variants: ["300", "400", "500"],
+              family: `Roboto`,
+              variants: [`300`, `400`, `500`],
               // subsets: ['latin']
               // text: 'Hello'
               // fontDisplay: 'swap',
@@ -103,7 +105,7 @@ module.exports = {
     // 'gatsby-plugin-styled-components',
 
     {
-      resolve: "gatsby-source-contentful",
+      resolve: `gatsby-source-contentful`,
       options: contentfulConfig,
     },
     {
@@ -157,9 +159,9 @@ module.exports = {
               }
               }
             `,
-            output: "/rss.xml",
-            title: "zoltansimon.me - RSS Feed",
-            match: "^/blog/",
+            output: `/rss.xml`,
+            title: `zoltansimon.me - RSS Feed`,
+            match: `^/blog/`,
           },
         ],
       },

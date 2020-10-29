@@ -12,6 +12,7 @@ const useStyles = makeStyles(theme => ({
     toolbar: theme.mixins.toolbar,
   },
 }))
+
 const Layout = ({ title, children }) => {
   const [mobileOpen, setMobileOpen] = React.useState(false)
   const classes = useStyles()
