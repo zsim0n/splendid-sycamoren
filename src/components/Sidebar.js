@@ -56,7 +56,7 @@ function Sidebar(props) {
       alignItems="flex-start"
       className={classes.container}
       direction="column"
-      justify="flex-end"
+      justifyContent="flex-end"
       spacing={5}
     >
       <Grid item className={classes.item}>

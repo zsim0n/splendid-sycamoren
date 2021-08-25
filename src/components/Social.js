@@ -37,7 +37,7 @@ export default function Social(props) {
       spacing={1}
       className={classes.root}
       direction="row"
-      justify="flex-start"
+      justifyContent="flex-start"
       alignItems="flex-end"
     >
       <Grid item>

@@ -35,21 +35,8 @@ module.exports = {
     },
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-gdpr-cookies`,
-      options: {
-        googleAnalytics: {
-          trackingId: "UA-178906614-1", // leave empty if you want to disable the tracker
-          cookieName: "zoltansimon-me-ga", // default
-          anonymize: true, // default
-          allowAdFeatures: false, // default
-        },
-        // defines the environments where the tracking should be available  - default is ["production"]
-        environments: ["production", "development"],
-      },
-    },
-
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-remark-images-contentful`,
     {
