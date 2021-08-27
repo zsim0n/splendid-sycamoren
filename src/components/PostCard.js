@@ -1,4 +1,4 @@
-import React, {Suspense,lazy} from 'react';
+import React from 'react';
 import { makeStyles } from "@material-ui/core/styles"
 
 import Typography from "@material-ui/core/Typography"
@@ -14,7 +14,8 @@ import CardContent from "@material-ui/core/CardContent"
 import CardActions from "@material-ui/core/CardActions"
 import PropTypes from "prop-types"
 
-const LazyCardMedia = lazy(() => import('./LazyCardMedia'));
+import loadable from '@loadable/component'
+const LazyCardMedia = loadable(() => import('./LazyCardMedia'));
 const useStyles = makeStyles(theme => ({
   card: {
     border: "none",
@@ -59,7 +60,6 @@ export default function PostCard(props) {
   const classes = useStyles(props)
   const { data, preview } = props
   return (
-    <Suspense fallback={null}>
       <Card className={classes.card} variant="outlined" component="article">
         {preview && (
           <CardActionArea href={data.stackbit_url_path?.stackbit_url_path}>
@@ -92,7 +92,6 @@ export default function PostCard(props) {
           </CardContent>
         )}
       </Card>
-    </Suspense>
   )
 }
 
