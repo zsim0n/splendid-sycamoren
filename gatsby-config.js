@@ -37,8 +37,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sharp`,
     `gatsby-plugin-image`,
-    `gatsby-transformer-sharp`,
-    `gatsby-remark-images-contentful`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -91,7 +89,7 @@ module.exports = {
         // usePreconnect: false,
       },
     },
-
+    `gatsby-plugin-material-ui`,
     {
       resolve: `gatsby-plugin-material-ui`,
       // If you want to use styled components, in conjunction to Material-UI, you should:
